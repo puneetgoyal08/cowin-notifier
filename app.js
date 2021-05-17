@@ -119,15 +119,11 @@ function pingCowin({ key, hook, age, districtId, appointmentsListLimit, date, pi
         if (isSlotAvailable) {
             if (hook && key) {
                 axios.post(`https://maker.ifttt.com/trigger/${hook}/with/key/${key}`, { value1: dataOfSlot }).then(() => {
-                    console.log('Sent Notification to Phone \nStopping Pinger...')
-                    sound.play(notificationSound);
-                    clearInterval(timer);
+                    console.log('Sent Notification to Phone')
                 });
             } else {
                 console.log(dataOfSlot);
                 console.log('Slots found\nStopping Pinger...')
-                sound.play(notificationSound, 1);
-                clearInterval(timer);
             }
         }
     }).catch((err) => {
