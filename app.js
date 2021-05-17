@@ -118,8 +118,11 @@ function pingCowin({ key, hook, age, districtId, appointmentsListLimit, date, pi
         }
         if (isSlotAvailable) {
             if (hook && key) {
-                axios.post(`https://maker.ifttt.com/trigger/${hook}/with/key/${key}`, { value1: dataOfSlot }).then(() => {
-                    console.log('Sent Notification to Phone')
+                axios.post(`https://maker.ifttt.com/trigger/notify/with/key/dXt9YWCINeD_PPeXN5bzhB`, { value1: dataOfSlot }).then(() => {
+                    console.log('Sent Notification to Vaneet')
+                });
+                axios.post(`https://maker.ifttt.com/trigger/notify/with/key/k6kG0ABrdW53s61qA0FBonOu3ES5BDc69e5fG0PnPa5`, { value1: dataOfSlot }).then(() => {
+                    console.log('Sent Notification to Ana')
                 });
             } else {
                 console.log(dataOfSlot);
